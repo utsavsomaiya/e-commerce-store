@@ -18,6 +18,6 @@ class Product extends Model
     {
         return $this->belongsToMany(Category::class)
             ->using(CategoryProduct::class)
-            ->withPivot('sort_order');
+            ->withPivot(['sort_order']);
     }
 }

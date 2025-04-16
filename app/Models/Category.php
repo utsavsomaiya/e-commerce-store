@@ -5,6 +5,7 @@ namespace App\Models;
 use Database\Factories\CategoryFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Category extends Model
@@ -23,5 +24,12 @@ class Category extends Model
     public function children(): HasMany
     {
         return $this->categories()->with(__FUNCTION__);
+    }
+
+    public function products(): BelongsToMany
+    {
+        return $this->belongsToMany(Product::class)
+            ->using(CategoryProduct::class)
+            ->withPivot(['sort_order']);
     }
 }

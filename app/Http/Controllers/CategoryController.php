@@ -22,12 +22,12 @@ class CategoryController extends Controller
 
     public function store(): void
     {
-
+        //
     }
 
     public function update(Category $category): void
     {
-
+        //
     }
 
     public function destroy(Category $category): void

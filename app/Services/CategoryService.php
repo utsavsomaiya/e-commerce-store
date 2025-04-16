@@ -16,6 +16,15 @@ class CategoryService
             ->get();
     }
 
+    public function fetchWithProductCount(): Collection
+    {
+        return Category::query()
+            ->withCount('products')
+            ->orderByDesc('products_count')
+            ->take(5)
+            ->get();
+    }
+
     public function delete(Category $category): void
     {
         throw_if(

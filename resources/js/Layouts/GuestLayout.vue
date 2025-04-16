@@ -13,5 +13,5 @@
 </template>
 <script setup>
 import { Link } from '@inertiajs/vue3'
-import Logo from '../components/Logo.vue'
+import Logo from '@/components/Logo.vue'
 </script>

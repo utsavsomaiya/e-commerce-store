@@ -19,6 +19,22 @@
                                     Dashboard
                                 </NavLink>
                             </div>
+                            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                                <NavLink
+                                    :href="route('categories.index')"
+                                    :active="route().current('categories.index')"
+                                >
+                                    Categories
+                                </NavLink>
+                            </div>
+                            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                                <NavLink
+                                    :href="route('products.index')"
+                                    :active="route().current('products.index')"
+                                >
+                                    Products
+                                </NavLink>
+                            </div>
                         </div>
 
                         <div class="hidden sm:ms-6 sm:flex sm:items-center">
@@ -112,6 +128,18 @@
                         >
                             Dashboard
                         </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            :href="route('categories.index')"
+                            :active="route().current('categories.index')"
+                        >
+                            Categories
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            :href="route('products.index')"
+                            :active="route().current('products.index')"
+                        >
+                            Products
+                        </ResponsiveNavLink>
                     </div>
 
                     <div class="border-t border-gray-200 pb-1 pt-4">
@@ -155,11 +183,11 @@
 <script setup>
 import { ref } from 'vue'
 import { Link } from '@inertiajs/vue3'
-import Logo from '../components/Logo.vue'
-import ResponsiveNavLink from '../components/ResponsiveNavLink.vue'
-import NavLink from '../components/NavLink.vue'
-import Dropdown from '../components/Dropdown.vue'
-import DropdownLink from '../components/DropdownLink.vue'
+import Logo from '@/components/Logo.vue'
+import ResponsiveNavLink from '@/components/ResponsiveNavLink.vue'
+import NavLink from '@/components/NavLink.vue'
+import Dropdown from '@/components/Dropdown.vue'
+import DropdownLink from '@/components/DropdownLink.vue'
 
 const showingNavigationDropdown = ref(false)
 </script>

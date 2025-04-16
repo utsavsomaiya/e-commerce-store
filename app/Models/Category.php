@@ -16,6 +16,12 @@ class Category extends Model
 
     public function categories(): HasMany
     {
-        return $this->hasMany(self::class, 'parent_category_id');
+        return $this->hasMany(self::class, 'parent_category_id')
+            ->select('id', 'name', 'parent_category_id');
+    }
+
+    public function children(): HasMany
+    {
+        return $this->categories()->with(__FUNCTION__);
     }
 }

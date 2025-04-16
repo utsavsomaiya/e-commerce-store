@@ -1,6 +1,6 @@
 <template>
     <GuestLayout>
-        <Head title="Login"></Head>
+        <Head title="Login" />
 
         <form @submit.prevent="submit">
             <div>
@@ -36,21 +36,41 @@
 
             <div class="mt-4 block">
                 <label class="flex items-center">
-                    <Checkbox name="remember" v-model:checked="form.remember" />
-                    <span class="ms-2 text-sm text-gray-600"
-                        >Remember me</span
-                    >
+                    <Checkbox
+                        name="remember"
+                        v-model:checked="form.remember"
+                    />
+                    <span class="ms-2 text-sm text-gray-600">Remember me</span>
                 </label>
+            </div>
+
+            <div class="mt-4 flex items-center justify-end">
+                <Link
+                    :href="route('register')"
+                    class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                >
+                    Register?
+                </Link>
+
+                <PrimaryButton
+                    class="ms-4"
+                    :class="{ 'opacity-25': form.processing }"
+                    :disabled="form.processing"
+                >
+                    Log in
+                </PrimaryButton>
             </div>
         </form>
     </GuestLayout>
 </template>
 <script setup>
-import { Head, useForm } from '@inertiajs/vue3'
-import GuestLayout from '../Layouts/GuestLayout.vue'
-import InputLabel from '../components/InputLabel.vue'
-import InputError from '../components/InputError.vue'
-import TextInput from '../components/TextInput.vue'
+import { Link, Head, useForm } from '@inertiajs/vue3'
+import GuestLayout from '../../Layouts/GuestLayout.vue'
+import InputLabel from '../../components/InputLabel.vue'
+import InputError from '../../components/InputError.vue'
+import TextInput from '../../components/TextInput.vue'
+import Checkbox from '../../components/Checkbox.vue'
+import PrimaryButton from '../../components/PrimaryButton.vue'
 
 const form = useForm({
     email: '',

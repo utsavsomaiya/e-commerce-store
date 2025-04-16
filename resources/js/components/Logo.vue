@@ -1,5 +1,18 @@
 <template>
-    <span class="text-3xl font-bold text-gradient bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent">
+    <span
+        :class="[
+            sizeClass,
+            'font-extrabold text-gradient bg-gradient-to-r from-blue-400 via-green-500 to-yellow-500 bg-clip-text text-transparent'
+        ]"
+    >
         E-commerce Store
     </span>
 </template>
+<script setup>
+defineProps({
+    sizeClass: {
+        type: String,
+        default: '',
+    }
+})
+</script>

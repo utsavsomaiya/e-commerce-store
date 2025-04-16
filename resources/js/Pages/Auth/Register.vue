@@ -91,11 +91,11 @@
 </template>
 <script setup>
 import { Link, Head, useForm } from '@inertiajs/vue3'
-import GuestLayout from '../../Layouts/GuestLayout.vue'
-import InputLabel from '../../components/InputLabel.vue'
-import InputError from '../../components/InputError.vue'
-import TextInput from '../../components/TextInput.vue'
-import PrimaryButton from '../../components/PrimaryButton.vue'
+import GuestLayout from '@/Layouts/GuestLayout.vue'
+import InputLabel from '@/components/InputLabel.vue'
+import InputError from '@/components/InputError.vue'
+import TextInput from '@/components/TextInput.vue'
+import PrimaryButton from '@/components/PrimaryButton.vue'
 
 const form = useForm({
     name: '',

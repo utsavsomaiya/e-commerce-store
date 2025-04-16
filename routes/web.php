@@ -9,5 +9,5 @@ Route::inertia('register', 'Register')->name('Register');
 Route::middleware(Authenticate::class)->group(function (): void {
     Route::get('/', function () {
         return 'hey buddy!';
-    });
+    })->name('dashboard');
 });

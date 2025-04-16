@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateOrUpdateCategoryRequest;
 use App\Models\Category;
 use App\Services\CategoryService;
 use Inertia\Inertia;
@@ -20,14 +21,14 @@ class CategoryController extends Controller
         ]);
     }
 
-    public function store(): void
+    public function store(CreateOrUpdateCategoryRequest $request): void
     {
-        //
+        $this->categoryService->create($request->all());
     }
 
-    public function update(Category $category): void
+    public function update(Category $category, CreateOrUpdateCategoryRequest $request): void
     {
-        //
+        $this->categoryService->update($category, $request->all());
     }
 
     public function destroy(Category $category): void

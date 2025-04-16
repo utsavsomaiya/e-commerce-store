@@ -25,6 +25,28 @@ class CategoryService
             ->get();
     }
 
+    /**
+     * @param array {
+     *    name: string,
+     *    parent_category_id?: ?int,
+     * } $data
+     */
+    public function create(array $data): Category
+    {
+        return Category::query()->create($data);
+    }
+
+    /**
+     * @param array {
+     *    name: string,
+     *    parent_category_id?: ?int,
+     * } $data
+     */
+    public function update(Category $category, array $data): Category
+    {
+        return tap($category, fn () => $category->update($data));
+    }
+
     public function delete(Category $category): void
     {
         throw_if(

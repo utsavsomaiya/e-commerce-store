@@ -15,6 +15,18 @@ class ProductService
             ->get(); // TODO: use `->paginate();`
     }
 
+    /**
+     * @param array {
+     *    name: string,
+     *    price: float,
+     *    quantity: int,
+     * } $data
+     */
+    public function create(array $data): Product
+    {
+        return Product::query()->create($data);
+    }
+
     public function delete(Product $product): void
     {
         $product->delete();

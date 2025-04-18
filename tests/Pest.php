@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Foundation\Testing\RefreshDatabaseState;
+use Tests\TestCase;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +13,8 @@ use Illuminate\Foundation\Testing\RefreshDatabaseState;
 |
 */
 
-pest()->extend(Tests\TestCase::class)
+pest()->extend(TestCase::class)
+    ->beforeEach(fn () => $this->withoutVite())
     ->in('Feature');
 
 /*
